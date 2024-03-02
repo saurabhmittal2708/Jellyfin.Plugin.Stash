@@ -42,7 +42,8 @@ namespace Stash.Providers
                 json = JObject.Parse(http.Content);
             }
             catch (Exception e)
-            {
+            {    
+                Logger.Error($"Response GetDataFromAPI \"${http.Content}\"");
                 Logger.Error($"Error GetDataFromAPI \"${e}\"");
             }
             finally
